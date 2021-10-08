@@ -9,7 +9,7 @@ import { validEmpty } from '@/utils/validate';
 import router, { resetRouter } from '@/router';
 
 const defMap = {
-    avatar: 'https://static.mymro.cn/newweb/Content/images/mymro.ico'
+    avatar: ''
 }
 const map = [
     {

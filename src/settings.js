@@ -6,7 +6,7 @@ const fixedHeader = getStorage('fixedHeader', true);
 const sidebarLogo = getStorage('sidebarLogo', true);
 
 export default {
-    title: 'Mymro Admin',
+    title: '雾海之下',
 
     showSettings,
 
@@ -18,16 +18,3 @@ export default {
 
     errorLog: 'production'
 };
-// module.exports = {
-//     title: 'Mymro Admin',
-
-//     showSettings,
-
-//     tagsView,
-
-//     fixedHeader,
-
-//     sidebarLogo,
-
-//     errorLog: 'production'
-// };
