@@ -41,7 +41,11 @@ export default {
             return this.session.data[this.step].class;
         },
         comContent() {
-            return this.session.data[this.step].content;
+            let content = this.session.data[this.step].content
+                .split('<br>')
+                .join('</p><p>');
+            content = `<p>${content}</p>`;
+            return content;
         },
         comNext() {
             return this.session.data[this.step].next;
@@ -81,16 +85,17 @@ export default {
     .van-tabbar {
         background: #191b1a;
         color: #f2f2f2;
-        .van-tabbar-item--active {
-            background: #191b1a;
-            color: #f2f2f2;
-        }
         .van-tabbar-item {
             background: #191b1a;
             color: #f2f2f2;
+            font-size: 18px;
         }
         .van-tabbar-item__icon {
             display: none;
+        }
+        .van-tabbar-item--active {
+            background: #191b1a;
+            color: #f2f2f2;
         }
     }
     .content {
@@ -100,11 +105,18 @@ export default {
         box-sizing: border-box;
         line-height: 1.5;
         color: #ddd;
+        text-indent: 2em;
         &.center {
-            height: 82vh;
+            height: calc(100vh - 46px - 50px);
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
+            // align-items: center;
+
+            padding-top: constant(safe-area-inset-top);
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: constant(safe-area-inset-bottom);
+            padding-bottom: env(safe-area-inset-bottom);
         }
     }
     .slide-fade-enter-active {
