@@ -108,6 +108,9 @@ export const session = (h) => ({
                             props: {
                                 value: msgbox.data[i]['value']
                             },
+                            domProps:{
+                                autofocus: i == 0 ? 'autofocus' : ''
+                            },
                             on: {
                                 input(e) {
                                     const value = e.target.value;
@@ -231,6 +234,9 @@ export const session = (h) => ({
                             class: 'session-input',
                             props: {
                                 value: msgbox.data[i]['value']
+                            },
+                            domProps:{
+                                autofocus: i == 0 ? 'autofocus' : ''
                             },
                             on: {
                                 input(e) {
@@ -448,6 +454,9 @@ export const session = (h) => ({
                             class: 'session-input',
                             props: {
                                 value: msgbox.data[i]['value']
+                            },
+                            domProps:{
+                                autofocus: i == 0 ? 'autofocus' : ''
                             },
                             on: {
                                 input(e) {
