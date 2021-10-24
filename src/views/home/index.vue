@@ -65,6 +65,15 @@ export default {
 };
 </script>
 <style lang="scss">
+.client-web {
+    .page-home {
+        .content {
+            text-indent: 2em;
+        }
+    }
+}
+</style>
+<style lang="scss">
 .page-home {
     width: 100%;
     min-height: 100vh;
@@ -81,6 +90,7 @@ export default {
         color: #f2f2f2;
         .van-nav-bar__title {
             color: #f2f2f2;
+            font-size: 18px;
         }
     }
     .van-tabbar {
@@ -102,11 +112,14 @@ export default {
     .content {
         width: 100%;
         height: 100%;
+        max-width: 55vh;
+        margin: auto;
         padding: 15px 10px;
         box-sizing: border-box;
         line-height: 1.5;
         color: #ddd;
-        text-indent: 2em;
+        text-indent: 5em;
+        font-size: 12rem;
         &.center {
             height: calc(100vh - 46px - 50px);
             display: flex;
