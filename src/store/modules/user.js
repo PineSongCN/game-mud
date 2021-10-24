@@ -28,34 +28,6 @@ const map = [
         key: 'userInfo',
         def: getStorage('userInfo', {})
     },
-    {
-        key: 'avatar',
-        def: defMap.avatar
-    },
-    {
-        key: 'email',
-        def: getStorage('email', '')
-    },
-    {
-        key: 'nickName',
-        def: getStorage('nickName', '')
-    },
-    {
-        key: 'opsType',
-        def: getStorage('opsType', '')
-    },
-    {
-        key: 'phonenumber',
-        def: getStorage('phonenumber', '')
-    },
-    {
-        key: 'sex',
-        def: getStorage('sex', '')
-    },
-    {
-        key: 'roles',
-        def: getStorage('roles', ['admin'])
-    }
 ];
 
 const state = {};
@@ -131,16 +103,10 @@ const actions = {
     async getInfo({ commit, state }) {
         try {
             const response = await getInfo(state.token);
-            const { userId, userName,  avatar, email, nickName, opsType, phonenumber, sex } = response;
+            const { userId, userName } = response;
             commit('SET_USERINFO', response);
             commit('SET_USERID', userId);
             commit('SET_USERNAME', userName);
-            commit('SET_AVATAR', avatar || defMap.avatar);
-            commit('SET_EMAIL', email);
-            commit('SET_NICKNAME', nickName);
-            commit('SET_OPSTYPE', opsType);
-            commit('SET_PHONENUMBER', phonenumber);
-            commit('SET_SEX', sex);
             return response;
         } catch (e) {
             console.log('store:user:getInfo:e', e);
@@ -152,8 +118,10 @@ const actions = {
         try {
             commit('SET_TOKEN', null);
             commit('SET_USERINFO', null);
+            commit('SET_USERID', null);
+            commit('SET_USERNAME', null);
             resetRouter();
-            dispatch('tagsView/delAllViews', null, { root: true });
+            // dispatch('tagsView/delAllViews', null, { root: true });
             return true;
         } catch (e) {
             console.log('store:user:logout:e', e);

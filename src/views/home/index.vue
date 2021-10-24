@@ -69,6 +69,7 @@ export default {
     width: 100%;
     min-height: 100vh;
     background: #191b1a;
+    // background: rgb(36, 40, 44);
     color: #f2f2f2;
     box-sizing: border-box;
     [class*='van-hairline']::after {
