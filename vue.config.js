@@ -107,6 +107,8 @@ module.exports = {
                 .end();
             config.optimization.splitChunks({
                 chunks: 'all',
+                minSize: 100000,
+                maxSize: 500000,
                 cacheGroups: {
                     libs: {
                         name: 'chunk-libs',
