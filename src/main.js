@@ -4,9 +4,10 @@ import Cookies from 'js-cookie';
 
 import 'normalize.css/normalize.css'; // a modern alternative to CSS resets
 
-import Element from 'element-ui';
+import Vant from '@/utils/Vant';
+import '@vant/touch-emulator';
+import Element from '@/utils/Element';
 import './styles/element-variables.scss';
-import enLang from 'element-ui/lib/locale/lang/en'; // 如果使用中文语言包请默认支持，无需额外引入，请删除该依赖
 
 import '@/styles/index.scss'; // global css
 
@@ -22,9 +23,7 @@ import * as filters from './filters'; // global filters
 
 import clipboard from '@/directive/focus.js';
 
-import Vant from 'vant';
-import 'vant/lib/index.css';
-import '@vant/touch-emulator';
+// import 'vant/lib/index.css';
 import Web3ModalMixin from '@/utils/mixin.js';
 const Web3ModalOptions = {
     network: 'mainnet', // optional
@@ -62,8 +61,7 @@ const Web3ModalOptions = {
 Vue.use(Vant);
 
 Vue.use(Element, {
-    size: Cookies.get('size') || 'mini' // set element-ui default size medium
-    // locale: enLang // 如果使用中文，无需设置
+    size: Cookies.get('size') || 'mini'
 });
 Vue.use(clipboard);
 
